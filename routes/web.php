@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StaticController;
+use App\Http\Controllers\VoyageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +16,14 @@ use App\Http\Controllers\StaticController;
 */
 
 Route::get('/', [StaticController::class, 'home'])->name('home');
+Route::get('admin/voyages', [VoyageController::class, 'index'])->name('admin');
+Route::get('admin/voyages/create', [VoyageController::class, 'create'])->name('voyage.add');
+Route::post('admin/voyages/store', [VoyageController::class, 'store'])->name('voyage.store');
+/*Route::get('post/{id}', [PostController::class, 'show'])->name('post.show');
+Route::get('post/{id}/edit', [PostController::class, 'edit'])->name('post.edit');
+Route::put('post/{id}/update', [PostController::class, 'update'])->name('post.update');
+Route::get('post/{id}/delete', [PostController::class, 'destroy'])->name('post.delete');
+*/
 Route::get('trips', [StaticController::class, 'trips'])->name('trips');
 Route::get('trip/{id}', [StaticController::class, 'trip'])->name('trip');
 Route::get(

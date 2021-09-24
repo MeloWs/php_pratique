@@ -29,7 +29,7 @@ class VoyageFactory extends Factory
             'resume' => $this->faker->text,
             'cost' => $this->faker->numberBetween($min = 200, $max = 9000),
             'rating' => $this->faker->numberBetween($min = 0, $max = 10),
-
+            'views' => $this->faker->numberBetween($min = 0, $max = 500)
         ];
     }
 }

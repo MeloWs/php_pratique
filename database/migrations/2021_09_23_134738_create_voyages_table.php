@@ -23,6 +23,7 @@ class CreateVoyagesTable extends Migration
             $table->text('resume');
             $table->integer('cost');
             $table->integer('rating');
+            $table->integer('views');
         });
     }
 
